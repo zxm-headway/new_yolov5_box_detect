@@ -1,0 +1,21 @@
+[base]
+
+[model]
+ckpt_f = "checkpoints/box_detect.onnx"
+device = "3"
+conf_thres = "0.25"
+iou_thres = "0.45"
+max_det = "1000"
+
+[data]
+data_path = "data/input"
+imgsz = "(640,640)"
+nc = 1  # number of classes
+names = ['box']  # class names
+
+[output]
+output_path = "data/output"
+name = "exp"
+
+[mqsrv]
+rpc_queue = 'server_rpc_queue_zhangxm'
